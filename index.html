@@ -25,7 +25,7 @@
 </nav>
 
 <!-- Hero -->
-<header class="bg-primary text-white py-5">
+<header class="bg-secondary text-white py-5">
     <div class="container text-center">
         <h1 class="display-4 fw-bold">CraftedWebb</h1>
         <p class="lead">Smart Plugins for WooCommerce B2B & Wholesale Stores 🚀</p>
@@ -57,13 +57,67 @@
 
 <!-- Donate -->
 <section id="donate" class="bg-light py-5">
-    <div class="container text-center">
-        <h2>Support Development</h2>
-        <p class="lead">If this plugin helps your business, please consider supporting CraftedWebb.</p>
-        <a href="https://buymeacoffee.com/yourlink" class="btn btn-warning btn-lg me-2">☕ Buy Me a Coffee</a>
-        <a href="https://paypal.me/yourlink" class="btn btn-success btn-lg">💳 Donate via PayPal</a>
+    <div class="container">
+        <h2 class="text-center">Support Development</h2>
+        <p class="lead text-center">If this plugin helps your business, you can support CraftedWebb with crypto donations.</p>
+
+        <!-- USDT TRC20 -->
+        <div class="row align-items-center border rounded p-3 mb-2 bg-white shadow-sm">
+            <div class="col-md-10">
+                <h6 class="mb-1">USDT (TRC20)</h6>
+                <code id="usdt">TSXb8n6o4sWCKGj7MqD42xBEiSR792D5cW</code>
+            </div>
+            <div class="col-md-2 text-end">
+                <button class="btn btn-outline-primary btn-sm copy-btn" data-target="usdt">Copy</button>
+            </div>
+        </div>
+
+        <!-- USDC ERC20 -->
+        <div class="row align-items-center border rounded p-3 mb-2 bg-white shadow-sm">
+            <div class="col-md-10">
+                <h6 class="mb-1">USDC (ERC20)</h6>
+                <code id="usdc">0xe0a5f075b1e20da8bde78a3d7271b316d1cf431a</code>
+            </div>
+            <div class="col-md-2 text-end">
+                <button class="btn btn-outline-primary btn-sm copy-btn" data-target="usdc">Copy</button>
+            </div>
+        </div>
+
+        <!-- ETH ERC20 -->
+        <div class="row align-items-center border rounded p-3 mb-2 bg-white shadow-sm">
+            <div class="col-md-10">
+                <h6 class="mb-1">ETH (ERC20)</h6>
+                <code id="eth">0xe0a5f075b1e20da8bde78a3d7271b316d1cf431a</code>
+            </div>
+            <div class="col-md-2 text-end">
+                <button class="btn btn-outline-primary btn-sm copy-btn" data-target="eth">Copy</button>
+            </div>
+        </div>
+
     </div>
 </section>
+
+<script>
+    document.querySelectorAll('.copy-btn').forEach(button => {
+        button.addEventListener('click', async () => {
+            const targetId = button.getAttribute('data-target');
+            const text = document.getElementById(targetId).innerText;
+
+            try {
+                await navigator.clipboard.writeText(text);
+                const original = button.innerHTML;
+                button.innerHTML = "✅ Copied";
+                setTimeout(() => {
+                    button.innerHTML = original;
+                    // button.classList.remove("btn-outline-success");
+                    // button.classList.add("btn-outline-primary");
+                }, 2000);
+            } catch (err) {
+                alert("Failed to copy!");
+            }
+        });
+    });
+</script>
 
 <!-- Contact -->
 <section id="contact" class="py-5">
