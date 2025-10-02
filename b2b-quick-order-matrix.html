@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>B2B Quick Order Matrix – CraftedWebb</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Optional: make the indicators slightly larger since they’re outside */
+        #screenshots .carousel-indicators [data-bs-target] {
+            width: .9rem; height: .9rem; border-radius: 50%;
+        }
+    </style>
+
 </head>
 <body>
 <!-- Navigation -->
@@ -33,20 +40,132 @@
     </div>
 </header>
 
-<!-- Features -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <img src="assets/img/screenshot.png" class="img-fluid rounded shadow" alt="Plugin screenshot">
+<!-- Screenshots carousel -->
+<section id="screenshots" class="py-5 bg-light">
+    <div class="container-fluid px-0">
+        <h2 class="text-center mb-4">Screenshots</h2>
+
+        <div id="screenshotsCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel"
+             data-bs-interval="3000"
+             data-bs-pause="false"
+             data-bs-wrap="true">
+            <div class="carousel-inner bg-dark">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height:60vh;">
+                        <img src="assets/img/0_paste_zone.jpg" class="d-block img-fluid" alt="Quick Order Table"
+                             style="max-height:75vh; object-fit:contain;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height:60vh;">
+                        <img src="assets/img/1_order_list.jpg" class="d-block img-fluid" alt="Paste from Excel"
+                             style="max-height:75vh; object-fit:contain;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height:60vh;">
+                        <img src="assets/img/2_search.jpg" class="d-block img-fluid" alt="Stock Validation"
+                             style="max-height:75vh; object-fit:contain;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height:60vh;">
+                        <img src="assets/img/3_quantity_warning.jpg" class="d-block img-fluid" alt="Stock Validation"
+                             style="max-height:75vh; object-fit:contain;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height:60vh;">
+                        <img src="assets/img/5_settings.jpg" class="d-block img-fluid" alt="Stock Validation"
+                             style="max-height:75vh; object-fit:contain;">
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <h2>Main Features</h2>
-                <ul class="list-unstyled fs-5">
-                    <li>✅ Paste SKUs and quantities from Excel</li>
-                    <li>✅ Instant stock validation</li>
-                    <li>✅ Easy SKU search & highlight</li>
-                    <li>✅ Simple, clean UX for wholesale buyers</li>
+        </div>
+
+        <!-- Controls placed BELOW the carousel -->
+        <div class="container mt-3">
+            <!-- Indicators (dots) -->
+            <div class="carousel-indicators position-static mb-2" style="gap:.5rem;">
+                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Prev/Next as regular buttons -->
+            <div class="d-flex justify-content-center gap-2">
+                <button class="btn btn-outline-secondary"
+                        type="button" data-bs-target="#screenshotsCarousel" data-bs-slide="prev">
+                    &larr; Previous
+                </button>
+                <button class="btn btn-outline-secondary"
+                        type="button" data-bs-target="#screenshotsCarousel" data-bs-slide="next">
+                    Next &rarr;
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Compelling Features -->
+<section id="features" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Merchants Love It</h2>
+        <div class="row g-4">
+            <!-- Left column: top features -->
+            <div class="col-md-6">
+                <ul class="list-unstyled fs-5 m-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>Paste from Excel</strong> — SKUs & quantities in one go.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>Instant stock validation</strong> before adding to cart.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>Modify quantities inline</strong>.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>“Add All”</strong> to speed checkout.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span>Quick SKU search & highlight for partial matches.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right column: supporting features -->
+            <div class="col-md-6">
+                <ul class="list-unstyled fs-5 m-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>Immediate preliminary total</strong>.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>Keyboard-friendly UX</strong> — Enter/Esc handling for ease of use.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>Fast, lightweight</strong> — WooCommerce-friendly footprint.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span><strong>Configure easily</strong> and show only for the roles you choose.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="me-2">✅</span>
+                        <span>Clean UI with minimal clicks for wholesale buyers.</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -113,6 +232,7 @@
         <p class="m-0">&copy; 2025 CraftedWebb</p>
     </div>
 </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
